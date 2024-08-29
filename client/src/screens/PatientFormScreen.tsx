@@ -35,12 +35,12 @@ const PatientFormScreen: React.FC<Props> = ({ navigation }) => {
   const [middleName, setMiddleName] = useState('');
   const [lastName, setLastName] = useState('');
   const [preferredName, setPreferredName] = useState('');
-  const [sex, setSex] = useState('Male'); // Default value
+  const [sex, setSex] = useState('Male'); 
   const [dob, setDob] = useState('');
   const [age, setAge] = useState('');
   const [maidenName, setMaidenName] = useState('');
   const [ssn, setSsn] = useState('');
-  const [maritalStatus, setMaritalStatus] = useState('Single'); // Default value
+  const [maritalStatus, setMaritalStatus] = useState('Single');
   const [address, setAddress] = useState('');
   const [contactNumber, setContactNumber] = useState('');
   const dispatch = useDispatch();
