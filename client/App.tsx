@@ -9,8 +9,8 @@ import FormConfirmationScreen from './src/screens/FormConfirmationScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import HIPAAAcknowledgementScreen from './src/screens/AcknowledgementScreen';
 import FinancialInformationScreen from './src/screens/FinancialInformationScreen';
+import HealthQuestionnaireScreen from './src/screens/HealthQuestionnaireScreen';
 
-// Define the parameter list for the stack navigator
 type RootStackParamList = {
   Home: undefined;
   PatientForm: undefined;
@@ -49,7 +49,8 @@ type RootStackParamList = {
     };
   };
   HIPAAAcknowledgement: undefined; 
-  FinancialInformationScreen: undefined;
+  FinancialInformation: undefined;
+  HealthQuestionnaire: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -65,14 +66,19 @@ const App: React.FC = () => {
             options={{ title: 'Home' }}
           />
           <Stack.Screen
+            name="PatientForm"
+            component={PatientFormScreen}
+            options={{ title: 'Patient Form' }}
+          />
+          <Stack.Screen
             name="HIPAAAcknowledgement"
             component={HIPAAAcknowledgementScreen}
             options={{ title: 'HIPAA Form' }}
           />
           <Stack.Screen
-            name="PatientForm"
-            component={PatientFormScreen}
-            options={{ title: 'Patient Form' }}
+            name="HealthQuestionnaire"
+            component={HealthQuestionnaireScreen}
+            options={{ title: 'Health History Questionnaire' }}
           />
           <Stack.Screen
             name="FormSubmission"
@@ -80,9 +86,14 @@ const App: React.FC = () => {
             options={{ title: 'Form Submission' }}
           />
           <Stack.Screen
-            name="FinancialInformationScreen"
+            name="FinancialInformation"
             component={FinancialInformationScreen}
             options={{ title: 'Financial Information' }}
+          />
+          <Stack.Screen
+            name="FormConfirmation"
+            component={FormConfirmationScreen}
+            options={{ title: 'Form Confirmation' }}
           />
         </Stack.Navigator>
       </NavigationContainer>

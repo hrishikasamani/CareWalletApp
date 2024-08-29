@@ -6,11 +6,18 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 type RootStackParamList = {
   Home: undefined;
-  FinancialInformationScreen: undefined;
+  FinancialInformation: undefined;
+  FormConfirmation: { patientInfo: {
+    firstName: string;
+    middleName: string;
+    lastName: string;
+    age: string;
+    contactNumber: string;
+  }};
 };
 
 type Props = {
-  navigation: StackNavigationProp<RootStackParamList, 'Home'>;
+  navigation: StackNavigationProp<RootStackParamList, 'FinancialInformation'>;
 };
 
 const FinancialInformationScreen: React.FC<Props> = () => {
@@ -33,8 +40,25 @@ const FinancialInformationScreen: React.FC<Props> = () => {
   };
 
   const handleSubmit = () => {
-    navigation.navigate('Home');
+    const patientInfo = {
+      date: date.toDateString(),
+      firstName: '', 
+      middleName: '', 
+      lastName: '', 
+      preferredName: '', 
+      sex: '', 
+      dob: '', 
+      age: '',
+      maidenName: '', 
+      ssn: '', 
+      maritalStatus: '', 
+      address: '', 
+      contactNumber: '', 
+    };
+
+    navigation.navigate('FormConfirmation', { patientInfo });
   };
+
 
   return (
     <ScrollView contentContainerStyle={styles.container}>

@@ -21,7 +21,6 @@ type RootStackParamList = {
     contactNumber: string;
   }};
   FormConfirmation: { patientInfo: {
-    date: string;
     firstName: string;
     middleName: string;
     lastName: string;
@@ -37,13 +36,11 @@ type RootStackParamList = {
   }};
 };
 
-// Define the navigation prop type for this screen
 type FormConfirmationScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
   'FormConfirmation'
 >;
 
-// Define the route prop type for this screen
 type FormConfirmationScreenRouteProp = RouteProp<
   RootStackParamList,
   'FormConfirmation'
@@ -59,9 +56,7 @@ const FormConfirmationScreen: React.FC<Props> = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Form Submitted Successfully!</Text>
-      
-      <Text style={styles.info}>Date: {patientInfo.date}</Text>
+      <Text style={styles.title}>All Forms have been Submitted Successfully!</Text>
       <Text style={styles.info}>First Name: {patientInfo.firstName}</Text>
       <Text style={styles.info}>Middle Name: {patientInfo.middleName}</Text>
       <Text style={styles.info}>Last Name: {patientInfo.lastName}</Text>
