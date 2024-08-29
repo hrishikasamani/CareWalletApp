@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RadioButton } from 'react-native-paper';
-import { black } from 'react-native-paper/lib/typescript/styles/themes/v2/colors';
 
 type RootStackParamList = {
     Home: undefined;
